@@ -95,5 +95,64 @@
       <a href="story.html">Read My Story →</a>
     </p>
   </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const termsYes = document.getElementById("yes");
+  const termsNo = document.getElementById("no");
+
+  // Optional: Message below form for terms validation
+  let termsMsg = document.createElement("div");
+  termsMsg.style.color = "#ff79c6";
+  termsMsg.style.marginTop = "16px";
+  termsMsg.style.fontWeight = "bold";
+  form.appendChild(termsMsg);
+
+  // Remove error highlight on input
+  [nameInput, emailInput].forEach(input => {
+    input.addEventListener("input", function() {
+      input.style.borderColor = "#7df9ff";
+      input.style.backgroundColor = "#1a1c2b";
+    });
+  });
+
+  form.addEventListener("submit", function(e) {
+    let valid = true;
+    termsMsg.textContent = ""; // clear message
+
+    // NAME required
+    if (!nameInput.value.trim()) {
+      valid = false;
+      nameInput.focus();
+      nameInput.style.borderColor = "#ff3c6f";
+      nameInput.style.backgroundColor = "#27101a";
+      return e.preventDefault();
+    }
+    // EMAIL required
+    if (!emailInput.value.trim()) {
+      valid = false;
+      emailInput.focus();
+      emailInput.style.borderColor = "#ff3c6f";
+      emailInput.style.backgroundColor = "#27101a";
+      return e.preventDefault();
+    }
+    // TERMS required (must pick yes/no)
+    if (!termsYes.checked && !termsNo.checked) {
+      valid = false;
+      termsMsg.textContent = "You must accept or decline the Terms of Agreement.";
+      termsYes.focus();
+      return e.preventDefault();
+    }
+    // All good: clear highlights
+    [nameInput, emailInput].forEach(input => {
+      input.style.borderColor = "#7df9ff";
+      input.style.backgroundColor = "#1a1c2b";
+    });
+    termsMsg.textContent = "";
+  });
+});
+</script>
 </body>
 </html>
