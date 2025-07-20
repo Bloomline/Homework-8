@@ -3,134 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <title>Project One: Neon Knights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
   <style>
-body {
-  background-image: url('Capital.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #0a0f1c;
-  color: #eaeaf2;
-  font-family: 'Segoe UI', sans-serif;
-  padding: 40px;
-}
-    h1, h2 {
-      color: #ff79c6;
+    body.story-body { /* fallback in case .story-body is missing in CSS */
+      background-image: url('Capital.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #0a0f1c;
     }
-    p {
-      margin-bottom: 20px;
+    .story-content {
+      max-width: 680px;
+      margin: 0 auto;
+      background: rgba(20,18,36,0.72);
+      border-radius: 20px;
+      padding: 36px 24px 16px 24px;
+      box-shadow: 0 0 60px #201533cc;
+      position: relative;
+      z-index: 2;
     }
-    .divider {
-      margin: 40px 0;
-      border-top: 1px solid #444;
-    }
-    a {
-      color: #8be9fd;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #f8f8f2;
-      text-shadow: 0 0 4px #ffbdf7;
-    }
-    img {
+    .chapter-art {
+      width: 90%;
+      max-width: 480px;
       display: block;
-      max-width: 100%;
-      margin: 20px auto;
-      border: 2px solid #ffbdf7;
-      border-radius: 8px;
+      margin: 32px auto;
+      border-radius: 14px;
+      border: 2px solid #8be9fd55;
+      box-shadow: 0 0 36px #2c1a4e99;
+      transition: transform 0.3s;
+    }
+    .chapter-art:hover {
+      transform: scale(1.025) rotate(-1deg);
+      border-color: #ff79c6;
+    }
+    .chapter-divider {
+      margin: 42px 0 30px 0;
+      border: none;
+      border-top: 2px dashed #7df9ff66;
+      opacity: 0.7;
     }
     .sigil {
-      font-size: 1.1em;
+      font-size: 1.3em;
       color: #7df9ff;
-      margin-top: 30px;
+      margin: 36px 0 16px 0;
+      text-align: center;
+      letter-spacing: 0.13em;
+      text-shadow: 0 0 18px #ff79c644;
+      font-weight: bold;
+    }
+    .lore-quote {
+      color: #ffd5fd;
+      font-size: 1.09em;
+      font-style: italic;
+      text-align: center;
+      margin: 24px 0 18px 0;
+      text-shadow: 0 0 7px #ff79c6aa;
+      letter-spacing: 0.01em;
+    }
+    h1, h2 {
       text-align: center;
     }
+    h1 {
+      animation: neonPulse 3.5s infinite ease-in-out;
+      font-size: 2.5em;
+      margin-bottom: 28px;
+      margin-top: 2px;
+    }
+    h2 {
+      color: #ff79c6;
+      margin-top: 35px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
     .nav {
-      margin-top: 50px;
+      margin-top: 48px;
       text-align: center;
     }
     .nav a {
-      margin: 0 10px;
+      margin: 0 12px;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      font-size: 1.12em;
+      color: #ffcaff;
+      text-shadow: 0 0 5px #ff79c6;
+      transition: color 0.18s;
     }
-    @keyframes neonPulse {
-  0% {
-    text-shadow: 0 0 5px #ff79c6, 0 0 10px #ff79c6, 0 0 20px #ff79c6, 0 0 40px #8be9fd;
-    color: #ffbdf7;
-  }
-  50% {
-    text-shadow: 0 0 10px #ff79c6, 0 0 20px #ff79c6, 0 0 30px #ffbdf7, 0 0 60px #ffbdf7;
-    color: #ffffff;
-  }
-  100% {
-    text-shadow: 0 0 5px #ff79c6, 0 0 10px #ff79c6, 0 0 20px #ff79c6, 0 0 40px #8be9fd;
-    color: #ffbdf7;
-  }
-}
-
-h1 {
-  animation: neonPulse 3.5s infinite ease-in-out;
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-}
+    .nav a:hover {
+      color: #fff68f;
+      text-shadow: 0 0 12px #ffbdf7;
+    }
+    @media (max-width: 700px) {
+      .story-content { padding: 12px 4vw; }
+      h1 { font-size: 1.4em; }
+    }
   </style>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="overlay">
-  <h1 id="main-title" class="glow-text">🜏 Project One: Neon Knights / Nova Knights</h1>
-  <h2 style="text-transform: uppercase; color: #ff79c6;">Act I: The Spark</h2>
-
-  <p style="font-style: italic;">Before everything there was nothing, and as soon as there was something, it was infinite.</p>
-
-  <p>
-    Set on the edge of the far-future Milkdromeda galaxy, a realm where science and sorcery blur, the Solarian Imperium rules with celestial tyranny. 
-    Entire systems orbit its throne. Beneath its golden banner, communities thrive or suffer in equal degree.
-  </p>
-
-  <p>
-    Among the stardust shadows lives <strong>Amélie</strong>, a splicer of code and whispers, unaware of her true bloodline. Once discarded like broken tech, she rose 
-    through grit, street-fire, and stolen data. Raised by outlaws. Hardened by espionage. Loved once by a friend, until fate tore him away.
-  </p>
-
-  <p>
-    Her path twists when she disobeys orders and peers into the core of a robot named <strong>Ace</strong>. There, she beholds the 
-    <em>Divine Code</em>—a living singularity of logic and myth. Her joke question of “How do I reverse entropy?” is answered.  
-    Coordinates. A deck of tarot that bends reality. A magic the empire thought dead.
-  </p>
-
-  <img src="Starmap.jpg" alt="Star Map">
-
-  <p>
-    With new allies Connor and Vel, Amélie escapes with Ace, yet every answer blooms more questions:  
-    <em>What is the Divine Code? Who else saw it? And what now awakens in her blood?</em>
-  </p>
-
-  <div class="divider"></div>
-
-  <h2>Act I Climax: Power’s First Edge</h2>
-  <p>
-    A prison ship. A failing system. Not enough food for thousands. Only for a handful.  
-    Amélie walks to the command console, civilians and teammates behind her. Her voice shakes as she jettisons every non-cockpit module.  
-    <strong>Thousands die.</strong> Instantly.  
-  </p>
-
-  <p>
-    She watches their faces, pressed to the glass as the void claims them.  
-    Her first command. Her first murder. Her first impossible choice.  
-    Power has awakened. It is hungry.
-  </p>
-
-  <img src="Voidship.png" alt="voidship">
-
-  <div class="sigil">🜮 It has only begun 🜮</div>
-
-  <div class="nav">
+<body class="story-body">
+  <div class="page-overlay"></div>
+  <div class="story-content">
+    <h1 id="main-title" class="glow-text">🜏 Project One: Neon Knights / Nova Knights</h1>
+    <div class="lore-quote">
+      Before everything there was nothing,<br>
+      and as soon as there was something, it was infinite.
+    </div>
+    <h2>Act I: The Spark</h2>
     <p>
-      <a href="index.html">← Return Home</a> |
-      <a href="contact.html">→ Contact Me</a>
+      On the edge of the far-future Milkdromeda galaxy, where science blurs with sorcery, the Solarian Imperium rules beneath a golden banner.<br>
+      Some thrive, some starve, all are watched by the ever-burning eye.
     </p>
+    <p>
+      In the shadows lives <strong>Amélie</strong> — code-splicer, myth-bender, orphan and outlier. Once discarded, she rose from data gutters to whispered legend, shaped by loss, fire, and one impossible love.
+    </p>
+    <p>
+      Her fate twists when she unlocks the heart of a robot named <strong>Ace</strong>. There, she beholds the <em>Divine Code</em> — a living singularity of logic and myth. Her joke: “How do I reverse entropy?” is answered... with coordinates. A tarot deck that bends reality. Magic the empire tried to kill.
+    </p>
+
+    <img src="Starmap.jpg" alt="Star Map" class="chapter-art">
+
+    <p>
+      With allies Connor and Vel, Amélie flees with Ace, but every answer breeds more riddles.<br>
+      <em>What is the Divine Code? Who else saw it? And what now blooms in her blood?</em>
+    </p>
+
+    <hr class="chapter-divider" />
+
+    <h2>Act I Climax: Power’s First Edge</h2>
+    <p>
+      A prison ship, system failing. Not enough food for thousands — only for a handful.<br>
+      Amélie steps to the console, her team behind her. Her hand shakes as she jettisons every non-cockpit module.<br>
+      <strong>Thousands die.</strong> Instantly.
+    </p>
+    <p>
+      She sees their faces pressed to the glass as the void takes them.<br>
+      Her first command. Her first murder. Her first impossible choice.<br>
+      Power awakens. It is hungry.
+    </p>
+
+    <img src="Voidship.png" alt="Voidship" class="chapter-art">
+
+    <div class="sigil">🜮 It has only begun 🜮</div>
+
+    <div class="nav">
+      <a href="index.html">← Return Home</a> |
+      <a href="contact.html">Contact Me →</a>
+    </div>
   </div>
 </body>
 </html>
