@@ -120,6 +120,14 @@ img {
   background-repeat: no-repeat !important;
 }
 
+.contact-body {
+  background-image: url('Psionica Sigil.png') !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 /* 🎯 NAVIGATION */
 .nav, .nav-links {
   margin-top: 50px;
