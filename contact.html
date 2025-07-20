@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Kyle</title>
+  <style>
+    body {
+      background-color: #0f1120;
+      color: #f0eaff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+    }
+    h1 {
+      color: #ffbdf7;
+      text-align: center;
+      animation: pulse 4s ease-in-out infinite;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #1a1c2b;
+      color: #ffffff;
+      border: 1px solid #7df9ff;
+      border-radius: 4px;
+    }
+    .radios {
+      margin-top: 15px;
+    }
+    input[type="submit"] {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #78f5ff;
+      border: none;
+      color: #0a0f1c;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #ff79c6;
+      color: white;
+    }
+    a {
+      color: #ffcaff;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff68f;
+    }
+    .nav {
+      margin-top: 50px;
+      text-align: center;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 8px #ff79c6, 0 0 12px #8be9fd;
+      }
+      50% {
+        text-shadow: 0 0 16px #ffbdf7, 0 0 24px #ffffff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💌 Contact Kyle Hansen</h1>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="Kyle.WLB.Hansen@gmail.com" required>
+
+    <label class="radios">Do you accept the Terms of Agreement?</label>
+    <input type="radio" id="yes" name="terms" value="yes" required>
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="terms" value="no">
+    <label for="no">No</label><br>
+
+    <input type="submit" value="Submit Message">
+  </form>
+
+  <div class="nav">
+    <p>
+      <a href="index.html">← Home</a> |
+      <a href="story.html">Read My Story →</a>
+    </p>
+  </div>
+</body>
+</html>
